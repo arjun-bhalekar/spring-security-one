@@ -3,8 +3,8 @@ spring:
   application:
     name: spring-security-one
 
-  security:
-    user: # Basic authentication with single static user
-      name: admin
-      password: admin@1234
+#  security:
+#    user: # Basic authentication with single static user
+#      name: admin
+#      password: admin@1234
 
