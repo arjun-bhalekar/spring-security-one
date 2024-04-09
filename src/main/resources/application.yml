@@ -2,6 +2,20 @@
 spring:
   application:
     name: spring-security-one
+  jpa:
+     show-sql: true
+     hibernate:
+       ddl-auto: create
+     defer-datasource-initialization: true
+  sql:
+    init:
+      mode: ALWAYS
+  datasource:
+    url: jdbc:h2:mem:myapp
+    username: sa
+    password: sa1234
+
+
 
 #  security:
 #    user: # Basic authentication with single static user

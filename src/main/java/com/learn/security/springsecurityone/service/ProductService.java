@@ -1,6 +1,9 @@
 package com.learn.security.springsecurityone.service;
 
+import com.learn.security.springsecurityone.entity.User;
 import com.learn.security.springsecurityone.model.Product;
+import com.learn.security.springsecurityone.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -18,6 +21,9 @@ public class ProductService {
         productList.add(new Product(104L, "Dell i5 Laptop", "Dell Standard I5 Laptop"));
     }
 
+    @Autowired
+    private UserRepository userRepository;
+
     public List<Product> getAllProducts() {
         return productList;
     }
@@ -33,5 +39,9 @@ public class ProductService {
 
     public boolean deleteProductBy(Long id) {
         return productList.remove(getProductById(id));
+    }
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 }

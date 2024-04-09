@@ -1,5 +1,6 @@
 package com.learn.security.springsecurityone.controller;
 
+import com.learn.security.springsecurityone.entity.User;
 import com.learn.security.springsecurityone.model.Product;
 import com.learn.security.springsecurityone.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +45,12 @@ public class ProductController {
             return "Product not found";
         }
 
+    }
+
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @GetMapping("/users")
+    public List<User> getAllUsers() {
+        return productService.getAllUsers();
     }
 
 
